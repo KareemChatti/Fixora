@@ -1,0 +1,123 @@
+<div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <img src="./assets/formWphoto.png">
+    <form [formGroup]="workerForm" (ngSubmit)="onSubmit()">
+      
+      
+      <div class="formbold-input-wrapp formbold-mb-3">
+        <label for="firstname" class="formbold-form-label"> Name </label>
+        <div>  
+          <input type="text" formControlName="firstname" placeholder="First name" class="formbold-form-input" />
+          <input type="text" formControlName="lastname" placeholder="Last name" class="formbold-form-input" />
+          <div *ngIf="workerForm.get('firstname')!.touched && workerForm.get('firstname')!.invalid" class="error">
+            <small class="text-danger">First name is required.</small>
+          </div>
+          <div *ngIf="workerForm.get('lastname')!.touched && workerForm.get('lastname')!.invalid" class="error">
+            <small class="text-danger">Last name is required.</small>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="formbold-mb-3">
+        <label for="dob" class="formbold-form-label"> Date of Birth </label>
+        <input type="date" formControlName="dob" class="formbold-form-input" />
+        <div *ngIf="workerForm.get('dob')!.touched && workerForm.get('dob')!.invalid" class="error">
+          <small class="text-danger">Date of birth is required.</small>
+        </div>
+      </div>
+
+      
+      <div class="formbold-mb-3">
+        <label class="formbold-form-label">Gender</label>
+        <select formControlName="occupation" class="formbold-form-input">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <div *ngIf="workerForm.get('occupation')!.touched && workerForm.get('occupation')!.invalid" class="error">
+          <small class="text-danger">Gender selection is required.</small>
+        </div>
+      </div>
+
+      
+      <div class="formbold-mb-3">
+        <label for="email" class="formbold-form-label"> Email </label>
+        <input type="email" formControlName="email" placeholder="example@email.com" class="formbold-form-input" />
+        <div *ngIf="workerForm.get('email')!.touched && workerForm.get('email')!.invalid" class="error">
+          <small *ngIf="workerForm.get('email')!.errors?.['required']" class="text-danger">Email is required.</small>
+          <small *ngIf="workerForm.get('email')!.errors?.['email']" class="text-danger">Invalid email format.</small>
+        </div>
+      </div>
+
+      
+      <div class="formbold-mb-3">
+        <label for="address" class="formbold-form-label"> Address </label>
+        <input type="text" formControlName="address" placeholder="Street address" class="formbold-form-input formbold-mb-3" />
+        <div *ngIf="workerForm.get('address')!.touched && workerForm.get('address')!.invalid" class="error">
+          <small class="text-danger">Address is required.</small>
+        </div>
+      </div>
+
+      
+      <div class="formbold-mb-3 formbold-input-wrapp">
+        <label for="phone" class="formbold-form-label"> Phone </label>
+        <input type="text" formControlName="phone" placeholder="Phone number" class="formbold-form-input" />
+        <div *ngIf="workerForm.get('phone')!.touched && workerForm.get('phone')!.invalid" class="error">
+          <small class="text-danger">Phone number is required.</small>
+        </div>
+      </div>
+
+      
+      <div class="formbold-input-flex">
+        <div>
+          <label for="post" class="formbold-form-label"> Post/Zip code </label>
+          <input type="text" formControlName="post" placeholder="ex:7080" class="formbold-form-input" />
+          <div *ngIf="workerForm.get('post')!.touched && workerForm.get('post')!.invalid" class="error">
+            <small class="text-danger">Zip code is required.</small>
+          </div>
+        </div>
+        <div>
+          <label for="city" class="formbold-form-label"> City </label>
+          <input type="text" formControlName="city" placeholder="ex: Ariana" class="formbold-form-input" />
+          <div *ngIf="workerForm.get('city')!.touched && workerForm.get('city')!.invalid" class="error">
+            <small class="text-danger">City is required.</small>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="formbold-mb-3">
+        <label for="service" class="formbold-form-label"> Service </label>
+        <input type="text" formControlName="service" placeholder="What service do you provide?" class="formbold-form-input formbold-mb-3" />
+        <div *ngIf="workerForm.get('service')!.touched && workerForm.get('service')!.invalid" class="error">
+          <small class="text-danger">Service description is required.</small>
+        </div>
+      </div>
+
+      
+      <div class="formbold-mb-3">
+        <label for="expyear" class="formbold-form-label"> Years Of Experience </label>
+        <input type="text" formControlName="expyear" placeholder="Years of experience" class="formbold-form-input formbold-mb-3" />
+        <div *ngIf="workerForm.get('expyear')!.touched && workerForm.get('expyear')!.invalid" class="error">
+          <small class="text-danger">Experience is required.</small>
+        </div>
+      </div>
+
+      <div class="formbold-mb-3">
+        <label for="serviceDescription" class="formbold-form-label">Describe Your Service and Experience</label>
+        <textarea formControlName="serviceDescription" placeholder="Provide details about the services you offer and your experience level" class="formbold-form-input formbold-mb-3" rows="4"></textarea>
+        <div *ngIf="workerForm.get('serviceDescription')!.touched && workerForm.get('serviceDescription')!.invalid" class="error">
+          <small class="text-danger">Description is required.</small>
+        </div>
+      </div>
+      <div class="formbold-mb-3">
+        <label for="image" class="formbold-form-label"> Your image </label>
+        <input type="text" formControlName="image" placeholder="Add your image URL" class="formbold-form-input formbold-mb-3" />
+        <div *ngIf="workerForm.get('image')!.touched && workerForm.get('image')!.invalid" class="error">
+          <small class="text-danger">image URL is required.</small>
+        </div>
+      </div>
+      <button type="submit" class="formbold-btn">Submit</button>
+    </form>
+  </div>
+</div>

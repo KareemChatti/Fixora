@@ -1,0 +1,9 @@
+nav {
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+
+nav a {
+    margin: 10px;
+    text-decoration: none;
+}

@@ -1,0 +1,25 @@
+ <div class="title">
+    <h2>Workers for {{ serviceName }}</h2>
+</div>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search by city..." [(ngModel)]="searchCity" (input)="filterWorkersByService()"
+            class="form-control" />
+    </div>
+<ul class="cards">
+    <li *ngFor="let worker of filteredWorkers" class="card-item" (click)="viewWorkerDetails(worker)">
+        <div class="card">
+            <img [src]="worker.image" alt="Worker Image" class="card__image" />
+            <div class="card__overlay">
+                <div class="card__header">
+                    <h3 class="card__title">{{ worker.firstname }} {{ worker.lastname }}</h3>
+                    <span class="card__status">{{ worker.city }}</span>
+                </div>
+                <p class="card__description">Specialization: {{ worker.occupation }}</p>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<app-worker-details-popup [worker]="selectedWorker" [show]="showPopup" (close)="closePopup()">
+</app-worker-details-popup>

@@ -1,0 +1,14 @@
+<div class="search-bar">
+    <input type="text" placeholder="Search for a service..." [(ngModel)]="searchTerm" (input)="filterServices()"
+        class="form-control" />
+</div>
+
+<div class="service-cards">
+    <div *ngFor="let service of filteredServices" class="service-card"
+        [style.backgroundImage]="'url(' + service.imageUrl + ')'" (click)="viewWorkers(service.name)">
+        <div class="overlay">
+            <h3>{{ service.name }}</h3>
+            <p>{{ service.description }}</p>
+        </div>
+    </div>
+</div>

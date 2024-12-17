@@ -1,0 +1,92 @@
+/* Container Styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle at center, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    background-size: 100% 200%;
+
+    font-family: 'Arial', sans-serif;
+}
+
+/* Card Styles */
+.card {
+    background: rgba(0, 0, 0, 0.8);
+    /* Slightly darker for better contrast */
+    padding: 70px;
+    /* Increased padding for a more spacious feel */
+    border-radius: 15px;
+    /* More rounded corners */
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
+    /* Enhanced shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    /* Lift effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+    /* Deeper shadow on hover */
+}
+
+/* Label Styles */
+label {
+    display: block;
+    margin: 15px 0 5px;
+    /* Increased margin for better spacing */
+    font-weight: bold;
+    /* Bold labels for emphasis */
+}
+
+/* Input Styles */
+input {
+    width: 100%;
+    padding: 12px;
+    /* Increased padding for comfort */
+    margin-bottom: 20px;
+    /* Increased margin for better spacing */
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    /* Light background for inputs */
+    color: white;
+    /* White text for better readability */
+    transition: background 0.3s ease;
+    /* Smooth transition for background change */
+}
+
+/* Input Focus Effect */
+input:focus {
+    background: rgba(255, 255, 255, 0.4);
+    /* Brighter background on focus */
+    outline: none;
+    /* Remove default outline */
+}
+
+/* Button Styles */
+button {
+    background-color: #007bff;
+    border: none;
+    padding: 15px 20px;
+    /* Increased padding for a more substantial button */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    /* Larger font size for better readability */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #0056b3;
+    /* Darker shade on hover */
+    transform: translateY(-2px);
+
+}
